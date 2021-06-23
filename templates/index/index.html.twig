@@ -20,7 +20,7 @@
 				class="alert alert-{{ bulletin.status }}">
 				{# équivaut à écrire  bulletin.getStatus #}
 				<h3 class="display-5">
-					<a href="{{ path('bulletin_display', {'bulletinId':bulletin.Id})}}">{{ bulletin.title }}</a>
+					<a href="{{ path('bulletin_display', {'bulletinId':bulletin.Id}) }}">{{ bulletin.title }}</a>
 				</h3>
 				<p class="h3">
 					<a href="{{ path('index_category', {'categoryName':bulletin.category}) }}">{{ bulletin.category }}</a>
@@ -28,7 +28,9 @@
 				<p>{{ bulletin.content }}</p>
 				<p class="lead">{{ bulletin.creationDate|date('d/m/Y à G:i:s', 'Europe/Paris') }}</p>
 				<p>
-					<b>Tags :
+					<b>
+						<a href="{{ path('tag_list') }}">Tags</a>
+						:
 					</b>
 					{% if bulletin.tags is empty %}
 						Aucun;
